@@ -137,15 +137,20 @@ For TOTP setup:
 ## 5. Backup and Restore
 
 ### 5.1. Backup Configuration
-Generate backup password:
+Generate backup password (if not yet stored):
 
 ```bash
 export BACKUP_PASSWORD=$(docker run -it pass-shelter derive_password "PASS_SHELTER_BACKUP_PASSWORD")
 ```
 
-Save the password to a local file
+Store the password to a local file
 ```bash
 echo $BACKUP_PASSWORD > ~/.backup_password
+```
+
+After the password is stored, read to an environment variable with:
+```bash
+export BACKUP_PASSWORD=$(< ~/.backup_password)
 ```
 
 ### 5.2. Create Backup
