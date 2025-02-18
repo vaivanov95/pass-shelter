@@ -180,3 +180,14 @@ Regularly verify backups:
 2. Attempt restore to test location
 3. Verify contents match current store
 4. Run integrity check: `pass git check`
+
+
+
+
+## 6. Automation
+### 6.1 .bashrc entries
+Using an example path `/mnt/s/auth/`,
+```bash
+export AUTH_PATH=/mnt/s/auth/
+alias psh='docker run --rm -it     -v ${AUTH_PATH}/.gnupg:/home/user/.gnupg     -v ${AUTH_PATH}/.password-store:/home/u>
+```
