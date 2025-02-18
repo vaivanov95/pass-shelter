@@ -143,6 +143,11 @@ Generate backup password:
 export BACKUP_PASSWORD=$(docker run -it pass-shelter derive_password "PASS_SHELTER_BACKUP_PASSWORD")
 ```
 
+Save the password to a local file
+```bash
+echo $BACKUP_PASSWORD > ~/.backup_password
+```
+
 ### 5.2. Create Backup
 
 ```bash
